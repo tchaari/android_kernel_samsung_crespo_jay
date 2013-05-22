@@ -57,7 +57,7 @@ void reset_scheduler_numbers(void) {
   perio_used_chnum = 0;
   nonperio_used_chnum = 0;
   total_used_chnum = 0;
-  memset(transferring_td_array,0,sizeof(transferring_td_array));
+  memset((u32 *)transferring_td_array,0,sizeof(transferring_td_array));
 }
 
 int inc_perio_bus_time(u32 bus_time, u8 dev_speed)

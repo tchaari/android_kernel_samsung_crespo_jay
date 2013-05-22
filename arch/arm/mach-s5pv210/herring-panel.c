@@ -453,7 +453,7 @@ struct s5p_tft_panel_data herring_sony_panel_data = {
 	.sleep_in = nt35580_SEQ_SLEEP_IN,
 	.display_on = nt35580_SEQ_DISPLAY_ON,
 	.display_off = nt35580_SEQ_DISPLAY_OFF,
-	.brightness_set = brightness_setting_table,
+	.brightness_set = (u16 *)brightness_setting_table,
 	.pwm_reg_offset = 1,
 };
 
@@ -963,7 +963,7 @@ struct s5p_tft_panel_data herring_hydis_panel_data = {
 	.display_on = nt35510_SEQ_DISPLAY_ON,
 	.sleep_in = nt35510_SEQ_SLEEP_IN,
 	.display_off = nt35510_SEQ_DISPLAY_OFF,
-	.brightness_set = brightness_setting_table,
+	.brightness_set = (u16 *)brightness_setting_table,
 	.pwm_reg_offset = 1,
 };
 
@@ -1012,7 +1012,7 @@ struct s5p_tft_panel_data herring_hitachi_panel_data = {
 	.display_on = R61408_SEQ_DISPLAY_ON,
 	.sleep_in = R61408_SEQ_SLEEP_IN,
 	.display_off = R61408_SEQ_DISPLAY_OFF,
-	.brightness_set = R61408_brightness_setting_table,
+	.brightness_set = (u16 *)R61408_brightness_setting_table,
 	.pwm_reg_offset = 4,
 };
 

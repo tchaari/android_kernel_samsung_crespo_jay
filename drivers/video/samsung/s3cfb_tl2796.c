@@ -249,6 +249,9 @@ static void setup_gamma_regs(struct s5p_lcd *lcd, u16 gamma_regs[])
 	int c, i;
 	u8 brightness = lcd->bl;
 	const struct tl2796_gamma_adj_points *bv = lcd->gamma_adj_points;
+#ifdef CONFIG_FB_VOODOO
+	int adj_hack;
+#endif
 
 	// red, green then blue
 	for (c = 0; c < 3; c++) {
@@ -278,7 +281,7 @@ static void setup_gamma_regs(struct s5p_lcd *lcd, u16 gamma_regs[])
 		// terrible shameful hack allowing to get back standard
 		// colors without fixing the real thing properly (gamma table)
 		// it consist on a simple (negative) offset applied on v0
-        int adj_hack = adj + ((hacky_v1_offset[c] * (int)adj) / 100);
+        adj_hack = adj + ((hacky_v1_offset[c] * (int)adj) / 100);
         if (adj_hack > 140)
             adj_hack = 140;
         gamma_regs[c] = adj_hack | 0x100;

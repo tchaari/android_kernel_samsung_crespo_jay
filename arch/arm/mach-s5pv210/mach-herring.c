@@ -46,7 +46,7 @@
 #include <mach/gpio-herring.h>
 #include <mach/adc.h>
 #include <mach/param.h>
-#include <mach/system.h>
+#include <plat/system-reset.h>
 
 #include <linux/usb/gadget.h>
 #include <linux/fsa9480.h>

@@ -632,11 +632,11 @@ static void s3c_battery_alarm(struct alarm *alarm)
 static ssize_t s3c_bat_show_attrs(struct device *dev,
 				  struct device_attribute *attr, char *buf)
 {
-	struct power_supply *psy = dev_get_drvdata(dev);
-	struct chg_data *chg = container_of(psy, struct chg_data, psy_bat);
+//	struct power_supply *psy = dev_get_drvdata(dev);
+//	struct chg_data *chg = container_of(psy, struct chg_data, psy_bat);
 	int i = 0;
 	const ptrdiff_t off = attr - s3c_battery_attrs;
-	union power_supply_propval value;
+//	union power_supply_propval value;
 
 	switch (off) {
 	case DISABLE_CHARGER:

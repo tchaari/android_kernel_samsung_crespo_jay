@@ -2372,21 +2372,21 @@ static int s5k4ecgx_s_ext_ctrl(struct v4l2_subdev *sd,
 	switch (ctrl->id) {
 
 	case V4L2_CID_CAMERA_GPS_LATITUDE:
-		tempGPSType = (struct gps_info_common *)ctrl->reserved2[1];
+		tempGPSType = (struct gps_info_common *)ctrl->reserved2[0];
 		state->gps_info.gps_buf[0] = tempGPSType->direction;
 		state->gps_info.gps_buf[1] = tempGPSType->dgree;
 		state->gps_info.gps_buf[2] = tempGPSType->minute;
 		state->gps_info.gps_buf[3] = tempGPSType->second;
 		break;
 	case V4L2_CID_CAMERA_GPS_LONGITUDE:
-		tempGPSType = (struct gps_info_common *)ctrl->reserved2[1];
+		tempGPSType = (struct gps_info_common *)ctrl->reserved2[0];
 		state->gps_info.gps_buf[4] = tempGPSType->direction;
 		state->gps_info.gps_buf[5] = tempGPSType->dgree;
 		state->gps_info.gps_buf[6] = tempGPSType->minute;
 		state->gps_info.gps_buf[7] = tempGPSType->second;
 		break;
 	case V4L2_CID_CAMERA_GPS_ALTITUDE:
-		tempGPSType = (struct gps_info_common *)ctrl->reserved2[1];
+		tempGPSType = (struct gps_info_common *)ctrl->reserved2[0];
 		state->gps_info.altitude_buf[0] = tempGPSType->direction;
 		state->gps_info.altitude_buf[1] =
 					(tempGPSType->dgree) & 0x00ff;
@@ -2395,7 +2395,7 @@ static int s5k4ecgx_s_ext_ctrl(struct v4l2_subdev *sd,
 		state->gps_info.altitude_buf[3] = tempGPSType->minute;
 		break;
 	case V4L2_CID_CAMERA_GPS_TIMESTAMP:
-		state->gps_info.gps_timeStamp = *((int *)ctrl->reserved2[1]);
+		state->gps_info.gps_timeStamp = *((int *)ctrl->reserved2[0]);
 		err = 0;
 		break;
 	default:
