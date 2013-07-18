@@ -468,7 +468,7 @@ static irqreturn_t s3c24xx_i2c_irq(int irqno, void *dev_id)
 
 static int s3c24xx_i2c_set_master(struct s3c24xx_i2c *i2c)
 {
-	unsigned long iicstat;
+	unsigned long iicstat = 0L;
 	int timeout = 400;
 
 	while (timeout-- > 0) {
