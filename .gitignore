@@ -28,7 +28,7 @@ modules.builtin
 *.gz
 *.bz2
 *.lzma
-*.xz
+*.xzkern
 *.lzo
 *.patch
 *.gcno
