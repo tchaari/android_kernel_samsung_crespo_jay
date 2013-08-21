@@ -210,7 +210,7 @@ static int k3g_read_gyro_values(struct i2c_client *client,
 static int k3g_report_gyro_values(struct k3g_data *k3g_data)
 {
 	int res;
-	struct k3g_t data;
+	struct k3g_t data = { 0, 0, 0 };
 
 	res = k3g_read_gyro_values(k3g_data->client, &data,
 				k3g_data->entries + k3g_data->drop_next_event);

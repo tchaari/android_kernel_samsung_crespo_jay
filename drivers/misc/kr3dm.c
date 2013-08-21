@@ -258,7 +258,7 @@ static long kr3dm_ioctl(struct file *file, unsigned int cmd, unsigned long arg)
 	int err = 0;
 	struct kr3dm_data *kr3dm = file->private_data;
 	s64 delay_ns;
-	struct kr3dm_acc data;
+	struct kr3dm_acc data = { 0, 0, 0 };
 	int i;
 	struct kr3dm_acceldata sum = { 0, };
 
