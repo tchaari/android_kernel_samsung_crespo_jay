@@ -578,7 +578,7 @@ static int s3cfb_wait_for_vsync(struct s3cfb_global *ctrl)
 	prev_timestamp = ctrl->vsync_timestamp;
 	ret = wait_event_interruptible_timeout(ctrl->vsync_wait,
 			s3cfb_vsync_timestamp_changed(ctrl, prev_timestamp),
-			msecs_to_jiffies(100));
+			msecs_to_jiffies(16 * 4));
 	if (ret == 0)
 		return -ETIMEDOUT;
 	if (ret < 0)
