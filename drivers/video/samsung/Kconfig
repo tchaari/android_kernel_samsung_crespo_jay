@@ -13,6 +13,15 @@ config FB_S3C
 	---help---
 	  This enables support for Samsung Display Controller (FIMD)
 
+config FB_S3C_CUSTOM_IOCTL
+	bool "S3C Custom IOCTL for Vsync"
+	depends on FB_S3C
+	default n
+	help
+	  This enables S3CFB_WAIT_FOR_VSYNC ioctl from CyanogenMod Team.
+
+	  Changes in dipslay HAL are required to call this ioctl.
+
 config FB_S3C_SPLASH_SCREEN
         bool "SPLASH_SCREEN on LCD"
         depends on FB_S3C
