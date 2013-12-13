@@ -84,7 +84,8 @@ static ssize_t wait_for_fb_wake_show(struct kobject *kobj,
 	char *s = buf;
 	int ret;
 	unsigned long irq_flags;
-
+    if (system_rev >= 0x30)
+        msleep(500);
 	spin_lock_irqsave(&fb_state_lock, irq_flags);
 	if (fb_state == FB_STATE_REQUEST_STOP_DRAWING) {
 		fb_state = FB_STATE_STOPPED_DRAWING;
