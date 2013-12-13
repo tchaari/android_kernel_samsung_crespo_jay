@@ -18,7 +18,7 @@
 #include <linux/timer.h>
 #include <linux/wakelock.h>
 
-static bool bln_enabled = true; /* is BLN function is enabled */
+static bool bln_enabled = false; /* is BLN function is enabled */
 static bool bln_ongoing = false; /* ongoing LED Notification */
 static bool bln_suspended = false; /* is system suspended */
 static struct bln_implementation *bln_imp = NULL;
