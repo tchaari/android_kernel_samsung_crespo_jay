@@ -16,7 +16,7 @@
 #include <linux/earlysuspend.h>
 #include <linux/module.h>
 #include <linux/wait.h>
-
+#include <linux/delay.h>
 #include "power.h"
 
 static wait_queue_head_t fb_state_wq;
